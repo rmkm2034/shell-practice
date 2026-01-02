@@ -24,29 +24,29 @@ VALIDATE(){
 }
     
 
-dnf list installed mysql
+# dnf list installed mysql
 
-if [ $? -nq 0 ]
-then
-    echo "mysql is not installed , going to istalll now"
-    dnf install mysql -y
-    VALIDATE $? mysql 
-else
-    echo "mysql already installed"  
-fi         
+# if [ $? -nq 0 ]
+# then
+#     echo "mysql is not installed , going to istalll now"
+#     dnf install mysql -y
+#     VALIDATE $? mysql 
+# else
+#     echo "mysql already installed"  
+# fi         
 
-dnf list installed python3
+# dnf list installed python3
 
-if [ $? -nq 0 ]
-then
-    echo "python3 is not installed , going to istalll now"
-    dnf install python3 -y
-    VALIDATE $? python3 
-else
-    echo "python3 already installed"  
-fi   
+# if [ $? -nq 0 ]
+# then
+#     echo "python3 is not installed , going to istalll now"
+#     dnf install python3 -y
+#     VALIDATE $? python3 
+# else
+#     echo "python3 already installed"  
+# fi   
 
-dnf list installed nginx
+# dnf list installed nginx
 
 if [ $? -nq 0 ]
 then
