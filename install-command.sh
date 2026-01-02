@@ -19,5 +19,6 @@ then
     echo "installation success"
 else
     echo "installation failure"
+    exit 1
 fi    
  
