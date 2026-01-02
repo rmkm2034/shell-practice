@@ -39,7 +39,7 @@ dnf list installed python3
 
 if [ $? -nq 0 ]
 then
-    echo "mysql is not installed , going to istalll now"
+    echo "python3 is not installed , going to istalll now"
     dnf install python3 -y
     VALIDATE $? python3 
 else
@@ -50,7 +50,7 @@ dnf list installed nginx
 
 if [ $? -nq 0 ]
 then
-    echo "mysql is not installed , going to istalll now"
+    echo "nginx is not installed , going to istalll now"
     dnf install nginx -y
     VALIDATE $? nginx 
 else
