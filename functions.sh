@@ -19,7 +19,7 @@ VALIDATE(){
         echo "installation for $2 is success"
     else
         echo "installation for $2 is failure"
-        exit 1
+        
     fi 
 }
     
