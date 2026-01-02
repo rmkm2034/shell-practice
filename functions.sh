@@ -46,7 +46,7 @@ VALIDATE(){
 #     echo "python3 already installed"  
 # fi   
 
-# dnf list installed nginx
+dnf list installed nginx
 
 if [ $? -nq 0 ]
 then
