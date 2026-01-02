@@ -12,7 +12,7 @@ else
     echo "Script running with root access"
 fi
 
-dnf install mysqldgsdgdfg -y
+dnf install mysql -y
 
 if [ $? -eq 0 ]
 then
