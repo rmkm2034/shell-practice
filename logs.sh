@@ -13,13 +13,13 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOGS_FOLDER/SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER
-echo "script started executed at : $(date)" &>>LOG_FILE
+echo "script started executed at : $(date)" tee -a &>>LOG_FILE
 
 
 if [ $USERID -ne 0 ]
 then
-    echo -e "$R Error : Please run this script with root access $N" &>>LOG_FILE
-    echo $USERID &>>LOG_FILE
+    echo -e "$R Error : Please run this script with root access $N" tee -a &>>LOG_FILE
+    echo $USERID tee -a &>>LOG_FILE
     exit 1
 else
     echo "Script running with root access"
@@ -29,7 +29,7 @@ VALIDATE(){
 
      if [ $1 -eq 0 ]
     then
-        echo -e " $Y installation for $2 is success $N" &>>LOG_FILE
+        echo -e " $Y installation for $2 is success $N" tee -a &>>LOG_FILE
     else
         echo "installation for $2 is failure"
         exit 1
@@ -37,23 +37,23 @@ VALIDATE(){
 }
     
 
-dnf list installed mysql &>>LOG_FILE
+dnf list installed mysql tee -a &>>LOG_FILE
 
 if [ $? -ne 0 ]
 then
-    echo -e " $G mysql is not installed , going to istalll now $N" &>>LOG_FILE
-    dnf install mysql -y &>>LOG_FILE
+    echo -e " $G mysql is not installed , going to istalll now $N" tee -a &>>LOG_FILE
+    dnf install mysql -y tee -a &>>LOG_FILE
     VALIDATE $? mysql 
 else
     echo "mysql already installed"  
 fi         
 
-dnf list installed python3 &>>LOG_FILE
+dnf list installed python3 tee -a &>>LOG_FILE
 
 if [ $? -ne 0 ]
 then
-    echo -e " $Y python3 is not installed , going to istalll now $N" &>>LOG_FILE
-    dnf install python3 -y &>>LOG_FILE
+    echo -e " $Y python3 is not installed , going to istalll now $N" tee -a &>>LOG_FILE
+    dnf install python3 -y tee -a &>>LOG_FILE
     VALIDATE $? python3 
 else
     echo "python3 already installed"  
