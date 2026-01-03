@@ -15,7 +15,7 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 mkdir -p $LOGS_FOLDER
 echo "script started executed at : $(date)" | tee -a $LOG_FILE
 
-package=("mysql" "python3" "ngnix")
+package=("mysql" "python3" "ngnix" )
 
 
 if [ $USERID -ne 0 ]
@@ -43,7 +43,7 @@ do
     dnf list installed $package  &>>LOG_FILE
     if [ $? -ne 0 ]
 then
-    echo -e " $G $package is not installed , going to istalll now $N" | tee -a $LOG_FILE
+    echo -e " $G $package is not installed , going to istall now $N" | tee -a $LOG_FILE
     dnf install $package -y  &>>LOG_FILE
     VALIDATE $? $package 
 else
