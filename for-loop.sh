@@ -15,7 +15,7 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 mkdir -p $LOGS_FOLDER
 echo "script started executed at : $(date)" | tee -a $LOG_FILE
 
-package=("mysql" "python3" "ngnix" )
+package=("mysql" "python3" "nginx")
 
 
 if [ $USERID -ne 0 ]
