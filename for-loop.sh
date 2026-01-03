@@ -47,7 +47,7 @@ then
     dnf install $package -y  &>>LOG_FILE
     VALIDATE $? $package 
 else
-    echo -e" $G $package already installed"  
+    echo -e "$G $package already installed $N" | tee -a $LOG_FILE  
 fi   
 done
 
